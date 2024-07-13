@@ -1,3 +1,21 @@
+.icon {
+    position: absolute;
+    color: var(--bs-secondary);
+    left: 10px;
+    top: 50%;
+    transform: translateY(calc(-50% - 4px));
+}
+
+.search {
+    padding-left: 2rem;
+    border-bottom: 2px solid var(--bs-primary-border-subtle) !important;
+
+    &:focus {
+        box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.1);
+        border-color: var(--bs-primary) !important;
+    }
+}
+
 .button {
     transition: all 0.2s ease;
 
@@ -16,3 +34,8 @@
     min-height: 100%;
     border: 1px solid var(--bs-secondary);
 }
+
+.arrow {
+    cursor: pointer;
+}
+

@@ -1,16 +1,83 @@
 <section>
     <div class="table-responsive container">
-        <h1 class="h2">Listado de personas</h1>
+        <article class="d-flex justify-content-between">
+            <h1 class="h2">Listado de personas</h1>
+            <div class="position-relative">
+                <i class="fa-solid fa-search icon"></i>
+                <input
+                    class="search form-control w-auto border-0 rounded-0"
+                    type="search"
+                    placeholder="Filtrar"
+                    aria-label="Search"
+                    (keyup)="filter($event)"
+                />
+            </div>
+        </article>
         <table
             class="table table-striped align-middle mt-3 mb-1 rounded-1 overflow-hidden"
         >
             <thead class="table-success">
                 <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cédula</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Fecha de nacimiento</th>
+                    <th scope="col">
+                        <div
+                            class="d-flex justify-content-between align-items-center h-100"
+                        >
+                            Nombre
+                            <i
+                                class="fa-solid arrow"
+                                [ngClass]="tableRows[0].asc ? 'fa-caret-up' : 'fa-caret-down'"
+                                (click)="sort('name')"
+                            ></i>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div
+                            class="d-flex justify-content-between align-items-center h-100"
+                        >
+                            Cédula
+                            <i
+                                class="fa-solid arrow"
+                                [ngClass]="tableRows[1].asc ? 'fa-caret-up' : 'fa-caret-down'"
+                                (click)="sort('identificationNumber')"
+                            ></i>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div
+                            class="d-flex justify-content-between align-items-center h-100"
+                        >
+                            Teléfono
+                            <i
+                                class="fa-solid arrow"
+                                [ngClass]="tableRows[2].asc ? 'fa-caret-up' : 'fa-caret-down'"
+                                (click)="sort('phone')"
+                            ></i>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div
+                            class="d-flex justify-content-between align-items-center h-100"
+                        >
+                            Correo
+                            <i
+                                class="fa-solid arrow"
+                                [ngClass]="tableRows[3].asc ? 'fa-caret-up' : 'fa-caret-down'"
+                                (click)="sort('email')"
+                            ></i>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div
+                            class="d-flex justify-content-between align-items-center h-100"
+                        >
+                            Fecha de nacimiento
+                            <i
+                                class="fa-solid arrow"
+                                [ngClass]="tableRows[4].asc ? 'fa-caret-up' : 'fa-caret-down'"
+                                (click)="sort('birthdate')"
+                            ></i>
+                        </div>
+                    </th>
                     <th scope="col" class="text-center">Acciones</th>
                 </tr>
             </thead>
