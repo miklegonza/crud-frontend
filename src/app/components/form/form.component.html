@@ -1,1 +1,78 @@
-<p>form works!</p>
+<section class="container-fluid">
+    <div class="row justify-content-center">
+        <form
+            class="row col-11 col-xl-4 col-lg-6 col-md-8 col-sm-10 g-3 bg-body-secondary px-4 pb-4 rounded-2"
+            [formGroup]="formPerson"
+            (ngSubmit)="onSubmit()"
+        >
+            <h2 class="mb-2 text-center">{{ title }}</h2>
+            <div class="col-12">
+                <label for="name" class="form-label">Nombre</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    formControlName="name"
+                    placeholder="Ingrese el nombre"
+                    required
+                />
+            </div>
+            <div class="col-12">
+                <label for="identificationNumber" class="form-label">
+                    Cédula
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="identificationNumber"
+                    formControlName="identificationNumber"
+                    placeholder="Ingrese la cédula"
+                    required
+                />
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Teléfono</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    formControlName="phone"
+                    placeholder="Ingrese un número de teléfono"
+                    required
+                />
+            </div>
+            <div class="col-md-6">
+                <label for="birthdate" class="form-label"
+                    >Fecha de nacimiento</label
+                >
+                <input
+                    type="date"
+                    class="form-control"
+                    id="birthdate"
+                    formControlName="birthdate"
+                    required
+                />
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    formControlName="email"
+                    placeholder="Ingrese su correo"
+                    required
+                />
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <button
+                    type="submit"
+                    class="btn btn-success px-4"
+                    [disabled]="!formPerson.valid"
+                >
+                    {{ button }}
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

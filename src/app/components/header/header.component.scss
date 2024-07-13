@@ -1,0 +1,12 @@
+.link {
+    border: 2px solid var(--bs-info-bg-subtle);
+    transition: 0.2s ease;
+
+    &:hover {
+        border: 2px solid var(--bs-info-border-subtle);
+    }
+}
+
+.active-link {
+    border-bottom: 2px solid var(--bs-info-border-subtle);
+}

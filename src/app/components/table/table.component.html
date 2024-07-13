@@ -1,1 +1,74 @@
-<p>table works!</p>
+<section>
+    <div class="table-responsive container">
+        <h1 class="h2">Listado de personas</h1>
+        <table
+            class="table table-striped align-middle mt-3 mb-1 rounded-1 overflow-hidden"
+        >
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Fecha de nacimiento</th>
+                    <th scope="col" class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (person of persons; track person.id) {
+                    <tr>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.identificationNumber }}</td>
+                        <td>{{ person.phone }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.birthdate | date: "mediumDate" }}</td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
+                                <button
+                                    type="button"
+                                    class="btn p-0 border-0"
+                                    routerLink="/form"
+                                >
+                                    <i
+                                        class="button edit fa-solid fa-pen text-warning p-2 rounded-5"
+                                        (click)="
+                                            setFormData(
+                                                'Modificar persona',
+                                                person.id
+                                            )
+                                        "
+                                    ></i>
+                                </button>
+                                <div class="btn-separator m-2"></div>
+                                <button type="button" class="btn p-0 border-0">
+                                    <i
+                                        class="button delete fa-solid fa-trash text-danger p-2 rounded-5"
+                                        (click)="
+                                            deletePerson(person.name, person.id)
+                                        "
+                                    ></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between align-items-start">
+            <p class="m-0">
+                Mostrando
+                <span class="fw-bold">{{ persons.length }}</span>
+                registros
+            </p>
+            <button
+                type="button"
+                class="btn btn-primary px-3 my-2 fw-bold rounded-2 text-white"
+                routerLink="/form"
+                (click)="setFormData('Crear persona')"
+            >
+                Agregar
+                <i class="fa-solid fa-circle-plus ms-2"></i>
+            </button>
+        </div>
+    </div>
+</section>

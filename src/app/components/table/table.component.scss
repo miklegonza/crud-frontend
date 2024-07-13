@@ -1,0 +1,18 @@
+.button {
+    transition: all 0.2s ease;
+
+    &.edit:hover {
+        background-color: var(--bs-warning);
+        color: var(--bs-white) !important;
+    }
+
+    &.delete:hover {
+        background-color: var(--bs-danger);
+        color: var(--bs-white) !important;
+    }
+}
+
+.btn-separator {
+    min-height: 100%;
+    border: 1px solid var(--bs-secondary);
+}
