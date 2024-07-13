@@ -1,12 +1,23 @@
-# LerFrontend
+# CRUD Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Esta es una aplicación de frontend construida con **Angular 18**.
 
-## Development server
+Consiste en consumir una [aplicación de backend](https://github.com/miklegonza/crud-backend) y realizar las operaciones CRUD básicas, permitiendo listar, crear, modificar y eliminar personas de una base de datos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requerimientos
 
-## Build
+- NodeJS
+- Angular 18 (angular-cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Ejecución
 
+Una vez ejecutado, se conectará a un servidor que se esté activo en _localhost_, en el puerto 8080. Esta configuración se puede cambiar en el directorio **environments**.
+
+```bash
+npm install
+npm start
+```
+
+## Backend
+
+✨ [Proyecto Spring Boot](https://github.com/miklegonza/crud-backend)
